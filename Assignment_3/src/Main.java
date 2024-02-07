@@ -1,4 +1,3 @@
-import data.InsertToDb;
 import schemas.Admin;
 import schemas.User;
 
@@ -12,9 +11,5 @@ public class Main {
                 "https_whoyan",
                 "somePass"
         );
-
-        InsertToDb dbInsertWorker = new InsertToDb();
-        dbInsertWorker.InsertUser(admin);
-        System.out.println(admin.getUserType());
     }
 }

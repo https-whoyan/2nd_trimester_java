@@ -16,6 +16,15 @@ public final class Utils {
         return Base64.getEncoder().encodeToString(hash);
     }
 
+    public boolean AuthUser(String username, String password) {
+        //тут будет запрос в бд из SelectFromDB;
+        //...
+        //допустим получил нужный хэш-пароль
+        String hashedPassword = "92sdjfbhu4hgff";
+        String enteredHashedPassword = getHashedPassword(password);
+        return hashedPassword.equals(enteredHashedPassword);
+    }
+
     public void GetConnector() {
         //Тут напишу коннектор к бд
     }
