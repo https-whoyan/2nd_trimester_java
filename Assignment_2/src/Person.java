@@ -1,10 +1,7 @@
-import java.util.Collection;
-
 public class Person implements Payable, Comparable<Person> {
     private static int nextId = 1;
-    private int id = nextId;
+    private int id = nextId++;
     private String name, surname;
-
 
     public int getId() {
         return id;
@@ -21,17 +18,14 @@ public class Person implements Payable, Comparable<Person> {
     public void setName(String name) {
         this.name = name;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
     public Person(){
-        this.id = nextId++;
     }
 
     public Person(String name, String surname) {
-        this.id = nextId++;
         setName(name);
         setSurname(surname);
     }
