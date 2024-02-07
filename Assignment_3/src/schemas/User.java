@@ -4,16 +4,12 @@ import data.Utils;
 
 public class User extends Person {
     private final Utils utils = new Utils();
-    private int id;
     private String username;
     private final UserType userType = UserType.User;
     private String hashedPassword;
 
-    public int getId() {
-        return id;
-    }
 
-    public String getPassword() {
+    public String getHashedPassword() {
         return this.hashedPassword;
     }
 
@@ -31,6 +27,9 @@ public class User extends Person {
 
     public UserType getUserType() {
         return userType;
+    }
+
+    public User() {
     }
 
     public User(String name, String surname, int age, String username, String password) {

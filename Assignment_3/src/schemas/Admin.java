@@ -7,6 +7,9 @@ public class Admin extends User {
         super(name, surname, age, username, password);
     }
 
+    public Admin() {
+    }
+
     @Override
     public UserType getUserType() {
         return userType;
