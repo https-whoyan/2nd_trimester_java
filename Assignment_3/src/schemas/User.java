@@ -40,4 +40,10 @@ public class User extends Person {
         hashedPassword = utils.getHashedPassword(password);
         setHashedPassword(hashedPassword);
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + " " + this.getSurname();
+    }
+
 }

@@ -35,9 +35,9 @@ public class DBWork {
             ResultSet table = statement.executeQuery(query);
             table.beforeFirst();
 
-            User currUser = new Admin();
+            User currUser = new User();
 
-            if (table.next()) {
+            while (table.next()) {
                 if (Objects.equals(table.getString(5), UserType.Admin.toString())) {
                     currUser = new Admin();
                 }
@@ -65,8 +65,7 @@ public class DBWork {
                     " WHERE username = '" + currUsername + "'";
             statement.executeQuery(query);
         } catch (Exception e) {
-            System.out.println(e.toString());
-            System.err.println("Запрос не вернул результатов, потому что это Update!");
+            //...
         }
     }
 
