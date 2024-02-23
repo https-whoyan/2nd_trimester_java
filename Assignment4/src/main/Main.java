@@ -9,23 +9,33 @@ public class Main {
         return new Scanner(System.in);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        // Введение констант
         String typeOfCourse;
         Scanner scanner = getScanner();
 
-        System.out.println("Введите тип курса.");
+        // Вывод
+        System.out.println("Введите тип нового курса.");
         System.out.println("Всего 4 вида: \nPython\nGolang\nJava\nTS");
         System.out.print("Тип курса: ");
         typeOfCourse = scanner.next();
 
-        String nameOfCourse = typeOfCourse + " Blyat";
+        // Создаю курс
+        String nameOfCourse = "top1 KZ " + typeOfCourse + " Course";
         Course anotherShitITCourse = new Course(nameOfCourse, typeOfCourse);
         // Создаем студента
         Developer newDev = anotherShitITCourse.devFactory.createDev("Рахат");
         anotherShitITCourse.appendNewDev(newDev);
 
-        System.out.println();
-        System.out.println("Выпустившийся студент пишет код...");
+        //Вывод
+        System.out.println("________");
+        System.out.println("Обучение на курсе " + anotherShitITCourse.getName() + "....");
+        Thread.sleep(1500);
+        System.out.println("________");
+
+        // Вывод принципа библиотеки
+        String messageToUser = "Выпустившийся студент " + anotherShitITCourse.devs.get(0).getName() + " пишет код...";
+        System.out.println(messageToUser);
         // Пишем код студента...
         anotherShitITCourse.devs.get(0).writeCode();
     }
